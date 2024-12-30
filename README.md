@@ -1,3 +1,6 @@
+Check out my blog at prabd.com/blog
+(It uses this program!)
+
 So here's the general idea.
 I made a discord bot in Python that runs on my local computer and invited it to my personal server,
 It only reacts to messages in the "blog" text channel
