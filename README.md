@@ -15,4 +15,4 @@ Please don't forget to make a .env file, where inside of it you set the followin
 # .env
 DISCORD_TOKEN="discord token here"
 PASSWORD="neocities pw here"
-BLOG_PATH="local cop of your blog"
+BLOG_PATH="local copy of your blog"
