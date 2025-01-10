@@ -2,6 +2,7 @@
 import os
 import discord
 import hashlib
+import urllib.request, urllib.error, urllib.parse
 from neocities import NeoCities
 from datetime import datetime
 
@@ -72,9 +73,24 @@ async def on_message(message):
             
         # Send the HTML formatted message back to the channel
         await message.channel.send(f"```html\n{html_content}\n```")
-        
-        # Append the blog post to blog.html
+
         blog_file_path = os.getenv('BLOG_PATH')
+        
+
+        # Change directory to neocities-prabd and get the blog.html file from the website
+        os.chdir("D:/neocities-prabd")
+        os.remove(blog_file_path)
+
+        url = 'http://www.prabd.com/blog'
+
+        response = urllib.request.urlopen(url)
+        webContent = response.read().decode('UTF-8')
+
+        f = open('blog.html', 'w', encoding = "utf-8")
+        f.write(webContent)
+        f.close()
+
+        # Append the blog post to blog.html
         with open(blog_file_path, 'r', encoding='utf-8') as file:
             content = file.read()
             
@@ -87,7 +103,6 @@ async def on_message(message):
             file.write(new_content)
 
         # Upload the updated file using Neocities API
-        os.chdir("D:/neocities-prabd")
         nc.upload(('blog.html', blog_file_path))
         print("Blog uploaded")
 
