@@ -16,3 +16,7 @@ Please don't forget to make a .env file, where inside of it you set the followin
 DISCORD_TOKEN="discord token here"
 PASSWORD="neocities pw here"
 BLOG_PATH="local copy of your blog"
+
+<p align="center">
+  <img src="discord blog diagram.jpg" width="350" title="hover text">
+</p>
