@@ -1,4 +1,3 @@
-# bot.py
 import os
 import discord
 import hashlib
@@ -87,7 +86,7 @@ async def on_message(message):
         webContent = response.read().decode('UTF-8')
 
         f = open('blog.html', 'w', encoding = "utf-8")
-        f.write(webContent)
+        f.write(webContent.replace('\r\n','\r'))
         f.close()
 
         # Append the blog post to blog.html
